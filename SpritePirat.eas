@@ -1,0 +1,53 @@
+﻿{"frames": [
+
+{
+	"filename": "SpritePlayer0000",
+	"frame": {"x":0,"y":0,"w":514,"h":514},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":514,"h":514},
+	"sourceSize": {"w":514,"h":514}
+}
+,{
+	"filename": "SpritePlayer0001",
+	"frame": {"x":0,"y":514,"w":514,"h":514},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":514,"h":514},
+	"sourceSize": {"w":514,"h":514}
+}
+,{
+	"filename": "SpritePlayer0002",
+	"frame": {"x":0,"y":1028,"w":514,"h":514},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":514,"h":514},
+	"sourceSize": {"w":514,"h":514}
+}
+,{
+	"filename": "SpritePlayer0003",
+	"frame": {"x":514,"y":0,"w":514,"h":514},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":514,"h":514},
+	"sourceSize": {"w":514,"h":514}
+}
+,{
+	"filename": "SpritePlayer0004",
+	"frame": {"x":514,"y":514,"w":514,"h":514},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":514,"h":514},
+	"sourceSize": {"w":514,"h":514}
+}],
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "14.0.0.110",
+	"Target": "Edge Animate",
+	"Target Version": "4.0",
+	"image": "SpritePirat.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1"
+}
+}
