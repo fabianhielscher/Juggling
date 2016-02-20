@@ -7,9 +7,9 @@ package
 	 * ...
 	 * @author Fabian Hielscher
 	 */
-	public class Vibration
+	public class Vibrationnn
 	{
-		public function Vibration()
+		public function Vibrationnn()
 		{
 		
 			var vibe:Vibration;
