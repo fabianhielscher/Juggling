@@ -41,9 +41,12 @@ package
 		public var screenData:BitmapData;
 		public var screen:Bitmap;
 		
+
+		
 		
 		public var flip:Boolean;
 		public var ballVariation:Number = 0;
+		public var realFrameTimeLastFrame:Number=0;
 		//public var keule:MovieClip;
 		
 		public function Ball(ball_x:int, ball_y:int):void
@@ -246,10 +249,36 @@ package
 			}
 			else
 			{
-				this.y += vy;
-				this.x += vx;
+				// time frame conversion
+				// fps = 30
+				// wenn vx = 1 -> 1 pixel pro (1/fps) sekundenn = 30 pixel pro sekunde  oder 0.03 pixel pro milisekunde
+				// neues vx = s/t = 1 pixel
+				var realFrameTime:Number
+				var realFrameTimeDiff:Number
+				var fps:Number = 30;
+				
+				if (realFrameTimeLastFrame == 0) {
+					realFrameTime = 1000/fps; // framezeit in milisekunden 33,333 ms
+				}else {
+					realFrameTime = new Date().getTime()-realFrameTimeLastFrame;
+				}
+				
+				realFrameTimeDiff = realFrameTime - 1000/fps // ist 0 per perfekte fps, bei framedrops > 0
+				trace("realFrameTime: "+realFrameTime );
+				trace("Abweichung: "+realFrameTimeDiff );
+				trace("Abweichung Multiplyer: "+ ( 1 + (realFrameTimeDiff / (1000 / fps))));
+				
+				//vx = adjust_frameDrops_vx(vx);
+				//vy = adjust_frameDrops_vy(vy);
+				
+				
+				
+				
+				this.y += vy *( 1 + (realFrameTimeDiff / (1000 / fps)));
+				this.x += vx *( 1 + (realFrameTimeDiff / (1000 / fps)));
 				vy += g;
 				
+				realFrameTimeLastFrame = new Date().getTime();
 				zeit++;
 				
 			}

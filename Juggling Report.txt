@@ -1,0 +1,157 @@
+﻿Juggling.swf Movie Report
+---------------------------
+
+Frame #    Frame Bytes    Total Bytes    Scene
+-------    -----------    -----------    -----
+      1        2361961        2361961    Scene 1 (AS 3.0 Classes Export Frame)
+      2              2        2361963    
+      3              2        2361965    
+      4              2        2361967    
+      5              2        2361969    
+      6              2        2361971    
+      7              2        2361973    
+      8              2        2361975    
+      9              2        2361977    
+     10              2        2361979    
+     11              2        2361981    
+     12              2        2361983    
+     13              2        2361985    
+     14              2        2361987    
+     15              2        2361989    
+     16              2        2361991    
+     17              2        2361993    
+     18              2        2361995    
+     19              6        2362001    
+     20             18        2362019    
+     21              2        2362021    
+     22              2        2362023    
+     23              2        2362025    
+     24              2        2362027    
+     25              2        2362029    
+     26              2        2362031    
+     27              2        2362033    
+     28              2        2362035    
+     29              2        2362037    
+     30              2        2362039    
+     31              2        2362041    
+     32              2        2362043    
+     33              2        2362045    
+     34              2        2362047    
+     35              2        2362049    
+     36              2        2362051    
+     37              2        2362053    
+     38              2        2362055    
+     39              2        2362057    
+     40              2        2362059    
+     41              2        2362061    
+     42              2        2362063    
+     43              2        2362065    
+     44              2        2362067    
+     45              2        2362069    
+     46              2        2362071    
+     47              2        2362073    
+     48              2        2362075    
+     49              2        2362077    
+     50              2        2362079    
+     51             17        2362096    
+     52              2        2362098    
+     53              6        2362104    
+     54              2        2362106    
+     55              2        2362108    
+     56              2        2362110    
+     57              2        2362112    
+     58              2        2362114    
+     59              2        2362116    
+     60              2        2362118    
+     61              2        2362120    
+     62              2        2362122    
+     63              2        2362124    
+     64              2        2362126    
+     65              2        2362128    
+     66              2        2362130    
+     67              2        2362132    
+     68              2        2362134    
+     69              2        2362136    
+     70              2        2362138    
+     71              2        2362140    
+
+Scene      Shape Bytes    Text Bytes    ActionScript Bytes
+-------    -----------    ----------    ------------------
+Scene 1             98             0                 50791
+
+Symbol                 Shape Bytes    Text Bytes    ActionScript Bytes
+-------------------    -----------    ----------    ------------------
+Aufgabe                          0             0                     0
+voll                            41            76                     0
+mcZeit                         100             0                     0
+Symbol 22                      226             0                     0
+Symbol 23                       79             0                     0
+ballAuswahl                     91             0                     0
+bg                             121             0                     0
+big_bg_buttonleiste            112             0                     0
+btn_player                      89             0                     0
+button_links_rechts             55             0                     0
+btn                             57           134                     0
+ButtonHit                       58             0                     0
+ButtonLeiste                     0             0                     0
+WurfButton                     474             0                     0
+PositionButton                 103             0                     0
+Symbol 9                        96             0                     0
+Symbol 3                        99             0                     0
+Symbol 4                        99             0                     0
+Symbol 5                        99             0                     0
+Symbol 6                        99             0                     0
+Symbol 7                        99             0                     0
+Symbol 8                        99             0                     0
+Hand                           219             0                     0
+Kopf_Panda                    1556             0                     0
+SpritePlayer                     0             0                     0
+Symbol 1                        42             0                     0
+exit                             0             0                     0
+Klick                            0             0                     0
+Symbol 10                       99             0                     0
+Menu                             0             0                     0
+menu_hintergrund               118             0                     0
+ShowTrick                       93            91                     0
+stern                           75             0                     0
+Symbol 1                        42             0                     0
+Symbol 2                         0             0                     0
+Symbol 11                        0             0                     0
+Symbol 12                       70             0                     0
+Symbol 13                        0           477                     0
+Symbol 14                        0             0                     0
+Symbol 15                        0          1113                     0
+Symbol 16                        0             0                     0
+Symbol 17                        0             0                     0
+Symbol 18                      152             0                     0
+Symbol 19                      250             0                     0
+Symbol 20                      487             0                     0
+Symbol 21                      161             0                     0
+Symbol 24                        0             0                     0
+Symbol 25                      138             0                     0
+Tween 1                          0             0                     0
+Zeitleiste                       0             0                     0
+
+Font Name       Bytes         Characters
+------------    ----------    ----------
+Monotxt_IV25         26637     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¥§ª«­°±µº»¼½¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĄąĆćČčĎďĘęĚěıŁłŃńŇňŐőŘřŚśŠšŤťŮůŰűŸŹźŻżŽžΩμАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя‐‘’‚“”„‹›₧€Ω∞≤
+Toledo               75746     !$%&()*,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZ_`abcdefghijklmnopqrstuvwxyz ¡¢£¥¨ª«¯´µ·º»¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿıŁłŒœŠšŸŽžƒˆˇ˘˙˚˜μπ—‘’‚‹›∏√
+Xirod                  831     GSaemrt 
+
+ActionScript Bytes    Location
+------------------    --------
+             50791    Scene 1:Frame 1
+
+Bitmap               Compressed    Original      Compression
+-----------------    ----------    ----------    -----------
+SpriteSchwert.png       1322602      82624000    Lossless
+SpritePirat.png           49836      16777216    Lossless
+SpritePanda.png          107141      16777216    Lossless
+SpriteMongo.png           19419       4194304    Lossless
+SpriteKeule.png          680411      82624000    Lossless
+                           3652         12320    Lossless
+0000.png                   1509        258860    JPEG Quality=0
+
+
+
+
