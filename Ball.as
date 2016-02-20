@@ -22,11 +22,13 @@ package
 		
 		public static var up_keulenwurf:int = 1;
 		public static var up_born_time:Number = 20; // wieviele frames bis ball erscheint
-		
+		public var realStartTime:Number;
 		public var born_time:Number;
 		public var zeit:Number;
 		public var zeit_end:Number;
+		public var zeit_bis_fangen:Number;
 		public var x_end:Number;
+		public var x_start:Number;
 		
 		public var nach_rechts:Boolean;
 		public var ball_x:int;
@@ -47,6 +49,7 @@ package
 		public var flip:Boolean;
 		public var ballVariation:Number = 0;
 		public var realFrameTimeLastFrame:Number=0;
+
 		//public var keule:MovieClip;
 		
 		public function Ball(ball_x:int, ball_y:int):void
@@ -95,6 +98,9 @@ package
 			zeit_end = -2 * vy / g;
 			
 			x_end = this.x + zeit_end * vx;
+			x_start = this.x;
+
+			realStartTime = new Date().getTime();
 		}
 		
 		private function initSprite():void
@@ -245,7 +251,7 @@ package
 			
 			if (ball_in_hand)
 			{
-				
+				zeit_bis_fangen = -1;
 			}
 			else
 			{
@@ -253,33 +259,28 @@ package
 				// fps = 30
 				// wenn vx = 1 -> 1 pixel pro (1/fps) sekundenn = 30 pixel pro sekunde  oder 0.03 pixel pro milisekunde
 				// neues vx = s/t = 1 pixel
-				var realFrameTime:Number
-				var realFrameTimeDiff:Number
-				var fps:Number = 30;
-				
+				var realFrameTime:Number;
+				var realFrameTimeDiff:Number;
+	
 				if (realFrameTimeLastFrame == 0) {
-					realFrameTime = 1000/fps; // framezeit in milisekunden 33,333 ms
+					realFrameTime = 1000/Main.fps; // framezeit in milisekunden 33,333 ms
 				}else {
 					realFrameTime = new Date().getTime()-realFrameTimeLastFrame;
 				}
 				
-				realFrameTimeDiff = realFrameTime - 1000/fps // ist 0 per perfekte fps, bei framedrops > 0
+				realFrameTimeDiff = realFrameTime - 1000/Main.fps // ist 0 per perfekte fps, bei framedrops > 0
 				trace("realFrameTime: "+realFrameTime );
-				trace("Abweichung: "+realFrameTimeDiff );
-				trace("Abweichung Multiplyer: "+ ( 1 + (realFrameTimeDiff / (1000 / fps))));
+				trace("Abweichung: " + realFrameTimeDiff );
+				Main.frameDropMultiplikator = ( 1 + (realFrameTimeDiff / (1000 / Main.fps)));
+
 				
-				//vx = adjust_frameDrops_vx(vx);
-				//vy = adjust_frameDrops_vy(vy);
-				
-				
-				
-				
-				this.y += vy *( 1 + (realFrameTimeDiff / (1000 / fps)));
-				this.x += vx *( 1 + (realFrameTimeDiff / (1000 / fps)));
-				vy += g;
+				this.y += vy *Main.frameDropMultiplikator;
+				this.x += vx *Main.frameDropMultiplikator;
+				vy += g*( 1 + (realFrameTimeDiff / (1000 / Main.fps)));
 				
 				realFrameTimeLastFrame = new Date().getTime();
-				zeit++;
+				zeit += Main.frameDropMultiplikator;
+				zeit_bis_fangen = zeit_end - zeit;
 				
 			}
 			setSprite();

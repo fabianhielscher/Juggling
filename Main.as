@@ -34,6 +34,9 @@
 		public static var breite:Number;
 		public static var hoehe:Number;
 		
+		public static var frameDropMultiplikator:Number = 1;
+		public static var fps:Number = 30;
+		
 		public static var char:Player;
 		
 		public static var buttons:ButtonLeiste = new ButtonLeiste();
@@ -87,8 +90,8 @@
 		public function loadData():void
 		{
 			Player.player = 1;
-			Player.wurfObjekt = 1;
-			Player.ballAnzahl = 6;
+			Player.wurfObjekt = 6;
+			Player.ballAnzahl = 1;
 			
 			initAufgaben();
 			aufgabeAktuell = 0;

@@ -132,8 +132,8 @@ package
 			vy *= daempfung_y;
 			vx *= daempfung_x;
 			
-			this.x += vx;
-			this.y += vy;
+			this.x += vx*Main.frameDropMultiplikator;
+			this.y += vy*Main.frameDropMultiplikator;
 			
 			//while (Math.sqrt((this.x - abstand) * (this.x - abstand) + (this.y) * (this.y)) >= Math.abs(radius))
 			//{
@@ -190,11 +190,17 @@ package
 				for (var i:int = 0; i < array.length; i++)
 				{
 					
-					zeit_bis_fangen = (array[i].zeit_end - array[i].zeit);
+					zeit_bis_fangen = array[i].zeit_bis_fangen;
+					
+					
+	
+					trace("array[i].zeit_end "+ array[i].zeit_end);
+					trace("array[i].zeit "+ array[i].zeit);
+					trace("zeit_bis_fangen "+ zeit_bis_fangen);
 					
 					if (zeit_bis_fangen >= 0 && (zeit_bis_fangen <= (Player.zeitIntervall)) && (zeit_bis_fangen < record_zeit) && Rechts == true && (array[i].rechtsWirdFangen == true && Rechts == true))
 					{
-						
+
 						myFangBall = i;
 						record_zeit = zeit_bis_fangen;
 					}
