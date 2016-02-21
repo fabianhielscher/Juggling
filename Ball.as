@@ -43,19 +43,14 @@ package
 		public var screenData:BitmapData;
 		public var screen:Bitmap;
 		
-
-		
-		
 		public var flip:Boolean;
 		public var ballVariation:Number = 0;
-		public var realFrameTimeLastFrame:Number=0;
-
+		public var realFrameTimeLastFrame:Number = 0;
+		
 		//public var keule:MovieClip;
 		
 		public function Ball(ball_x:int, ball_y:int):void
 		{
-	
-			
 			
 			this.x = ball_x;
 			this.y = ball_y;
@@ -75,10 +70,8 @@ package
 			removeEventListener(Event.ADDED_TO_STAGE, activation);
 			born_time = 0;
 			
-			
 			init();
 			initSprite();
-			
 			
 			tot = false;
 			addEventListener(Event.ENTER_FRAME, loop);
@@ -89,18 +82,17 @@ package
 			ball_in_hand = true;
 			zeit = 0;
 			flip = false;
-			
+		
 		}
 		
 		public function berechneFangzeit():void
 		{
-			trace("vy::::::: " + vy);
 			zeit = 0;
 			zeit_end = -2 * vy / g;
 			
 			x_end = this.x + zeit_end * vx;
 			x_start = this.x;
-
+			
 			realStartTime = new Date().getTime();
 		}
 		
@@ -114,8 +106,6 @@ package
 			screen.y -= 128;
 			
 			addChild(screen);
-			
-			
 		
 		}
 		
@@ -140,8 +130,7 @@ package
 				}
 				
 				// variation in der handhaltung
-				handWert = handWert + ballVariation * (0.5-handWert)
-				
+				handWert = handWert + ballVariation * (0.5 - handWert)
 				
 				frame = int(30 - 30 * handWert);
 				if (frame < 1)
@@ -190,7 +179,7 @@ package
 				matrix = new Matrix(-1, 0, 0, 1, screen.bitmapData.width, 0);
 				
 				flipped.draw(screen.bitmapData, matrix, null, null, null, true);
-				screenData.copyPixels(flipped, new Rectangle(2, 2, 256, 256), new Point(0, 0));	
+				screenData.copyPixels(flipped, new Rectangle(2, 2, 256, 256), new Point(0, 0));
 			}
 		
 		}
@@ -256,18 +245,10 @@ package
 			}
 			else
 			{
-				
-				
-				
-				this.y += vy *Main.frameDropMultiplikator;
-				this.x += vx *Main.frameDropMultiplikator;
-				vy += g*Main.frameDropMultiplikator;
-				
+				this.y += vy * Main.frameDropMultiplikator;
+				this.x += vx * Main.frameDropMultiplikator;
+				vy += g * Main.frameDropMultiplikator;
 				zeit += Main.frameDropMultiplikator;
-				
-				trace("  ");
-				trace("zeit_end "+zeit_end );
-				trace("zeit "+zeit );
 				zeit_bis_fangen = zeit_end - zeit;
 				
 			}

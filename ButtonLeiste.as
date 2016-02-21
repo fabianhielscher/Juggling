@@ -52,103 +52,103 @@ package
 			l0 = new WurfButton();
 			l0.x = -180;
 			l0.y = 0;
-			l0.init(7);	
+			l0.init(7);
 			
 			l1 = new WurfButton();
-			l1.x = -180+abstand;
+			l1.x = -180 + abstand;
 			l1.y = 0;
-			l1.init(1);	
+			l1.init(1);
 			
 			l2 = new WurfButton();
-			l2.x = -180-abstand;
+			l2.x = -180 - abstand;
 			l2.y = 0;
-			l2.init(2);	
+			l2.init(2);
 			
 			l3 = new WurfButton();
-			l3.x = -180+abstand/2;
+			l3.x = -180 + abstand / 2;
 			l3.y = -95;
-			l3.init(3);	
+			l3.init(3);
 			
 			l4 = new WurfButton();
-			l4.x = -180-abstand/2;
+			l4.x = -180 - abstand / 2;
 			l4.y = -95;
-			l4.init(4);	
+			l4.init(4);
 			
 			l5 = new WurfButton();
-			l5.x = -180+abstand/2;
+			l5.x = -180 + abstand / 2;
 			l5.y = 95;
-			l5.init(5);	
-	
+			l5.init(5);
+			
 			l6 = new WurfButton();
-			l6.x = -180-abstand/2;
+			l6.x = -180 - abstand / 2;
 			l6.y = 95;
-			l6.init(6);				
+			l6.init(6);
 			
 			r0 = new WurfButton();
 			r0.x = 180;
 			r0.y = 0;
-			r0.init(7);	
+			r0.init(7);
 			
 			r1 = new WurfButton();
-			r1.x = 180-abstand;
+			r1.x = 180 - abstand;
 			r1.y = 0;
-			r1.init(1);	
+			r1.init(1);
 			
 			r2 = new WurfButton();
-			r2.x = 180+abstand;
+			r2.x = 180 + abstand;
 			r2.y = 0;
-			r2.init(2);	
+			r2.init(2);
 			
 			r3 = new WurfButton();
-			r3.x = 180-abstand/2;
+			r3.x = 180 - abstand / 2;
 			r3.y = -95;
-			r3.init(3);	
+			r3.init(3);
 			
 			r4 = new WurfButton();
-			r4.x = 180+abstand/2;
+			r4.x = 180 + abstand / 2;
 			r4.y = -95;
-			r4.init(4);	
+			r4.init(4);
 			
 			r5 = new WurfButton();
-			r5.x = 180-abstand/2;
+			r5.x = 180 - abstand / 2;
 			r5.y = 95;
-			r5.init(5);	
-	
+			r5.init(5);
+			
 			r6 = new WurfButton();
-			r6.x = 180+abstand/2;
+			r6.x = 180 + abstand / 2;
 			r6.y = 95;
-			r6.init(6);	
+			r6.init(6);
 			
 			l0.x += Main.breite / 2;
-			l0.y += Main.hoehe -  Main.breite / 4;
+			l0.y += Main.hoehe - Main.breite / 4;
 			l1.x += Main.breite / 2;
-			l1.y += Main.hoehe -  Main.breite / 4;
+			l1.y += Main.hoehe - Main.breite / 4;
 			l2.x += Main.breite / 2;
-			l2.y += Main.hoehe -  Main.breite / 4;
+			l2.y += Main.hoehe - Main.breite / 4;
 			l3.x += Main.breite / 2;
-			l3.y += Main.hoehe -  Main.breite / 4;
+			l3.y += Main.hoehe - Main.breite / 4;
 			l4.x += Main.breite / 2;
-			l4.y += Main.hoehe -  Main.breite / 4;
+			l4.y += Main.hoehe - Main.breite / 4;
 			l5.x += Main.breite / 2;
-			l5.y += Main.hoehe -  Main.breite / 4;
+			l5.y += Main.hoehe - Main.breite / 4;
 			l6.x += Main.breite / 2;
-			l6.y += Main.hoehe -  Main.breite / 4;
+			l6.y += Main.hoehe - Main.breite / 4;
 			
 			r0.x += Main.breite / 2;
-			r0.y += Main.hoehe -  Main.breite / 4;
+			r0.y += Main.hoehe - Main.breite / 4;
 			r1.x += Main.breite / 2;
-			r1.y += Main.hoehe -  Main.breite / 4;
+			r1.y += Main.hoehe - Main.breite / 4;
 			r2.x += Main.breite / 2;
-			r2.y += Main.hoehe -  Main.breite / 4;
+			r2.y += Main.hoehe - Main.breite / 4;
 			r3.x += Main.breite / 2;
-			r3.y += Main.hoehe -  Main.breite / 4;
+			r3.y += Main.hoehe - Main.breite / 4;
 			r4.x += Main.breite / 2;
-			r4.y += Main.hoehe -  Main.breite / 4;
+			r4.y += Main.hoehe - Main.breite / 4;
 			r5.x += Main.breite / 2;
-			r5.y += Main.hoehe -  Main.breite / 4;
+			r5.y += Main.hoehe - Main.breite / 4;
 			r6.x += Main.breite / 2;
-			r6.y += Main.hoehe -  Main.breite / 4;
-					
+			r6.y += Main.hoehe - Main.breite / 4;
+			
 			this.addChild(l0);
 			this.addChild(l1);
 			this.addChild(l2);
@@ -163,7 +163,6 @@ package
 			this.addChild(r4);
 			this.addChild(r5);
 			this.addChild(r6);
-
 			
 			//r0.init(7);
 			//r1.init(1);
@@ -235,7 +234,7 @@ package
 			var btn:int = welcher_btn(e.stageX, e.stageY)
 			// 800 480
 			//if (e.stageX > 240 && e.stageY > 640)
-			if (e.stageX > Main.breite/2 && e.stageY > (Main.hoehe - Main.breite/2) )
+			if (e.stageX > Main.breite / 2 && e.stageY > (Main.hoehe - Main.breite / 2))
 			{
 				
 				letzte_pos_r = new Point(e.stageX, e.stageY);
@@ -263,7 +262,7 @@ package
 				}
 				
 			}
-			if (e.stageX < Main.breite/2 && e.stageY > (Main.hoehe - Main.breite/2) )
+			if (e.stageX < Main.breite / 2 && e.stageY > (Main.hoehe - Main.breite / 2))
 			{
 				
 				letzte_pos_l = new Point(e.stageX, e.stageY);
@@ -305,17 +304,11 @@ package
 			var radius:int = 50;
 			
 			//if (stageY > 590)
-			if (stageY > (Main.hoehe - Main.breite/2) )
+			if (stageY > (Main.hoehe - Main.breite / 2))
 			{
 				
-				if (stageX < Main.breite/2)
+				if (stageX < Main.breite / 2)
 				{
-					trace(" ");
-					trace("l1.x "+l1.x);
-					trace("stageX "+stageX);
-					trace("l1.y "+l1.y);
-					trace("stageY " + stageY);
-					trace("abstand(l1.x, stageX, l1.y, stageY) " + abstand(l1.x, stageX, l1.y, stageY));
 					
 					if (abstand(l1.x, stageX, l1.y, stageY) < radius)
 					{
@@ -338,7 +331,7 @@ package
 						n = 5;
 					}
 					else if (abstand(l6.x, stageX, l6.y, stageY) < radius)
-					{	
+					{
 						n = 6;
 					}
 				}
@@ -377,8 +370,7 @@ package
 		
 		private function move_r(e:TouchEvent):void
 		{
-			//trace("ich checke: ");
-			if (e.stageX > Main.breite/2)
+			if (e.stageX > Main.breite / 2)
 			{
 				var btn:int = welcher_btn(e.stageX, e.stageY);
 				
@@ -405,7 +397,7 @@ package
 		
 		private function move_l(e:TouchEvent):void
 		{
-			if (e.stageX < Main.breite/2)
+			if (e.stageX < Main.breite / 2)
 			{
 				
 				var btn:int = welcher_btn(e.stageX, e.stageY);
@@ -434,7 +426,7 @@ package
 		
 		private function markiereButton(stageX:Number, stageY:Number):void
 		{
-			if (stageX > Main.breite/2)
+			if (stageX > Main.breite / 2)
 			{
 				this["r" + welcher_btn(stageX, stageY)].clicked();
 				
@@ -488,7 +480,7 @@ package
 		
 		{
 			
-			if (e.stageX > Main.breite/2)
+			if (e.stageX > Main.breite / 2)
 			{
 				r0.unclicked();
 				root.stage.removeEventListener(TouchEvent.TOUCH_END, werfe_r);
@@ -502,12 +494,10 @@ package
 					Main.multi_r[0] = 2;
 				}
 				
-				
 				if (Main.multi_r.length > 0)
 				{
 					Main.char.checkAufgabenWurf(1, Main.multi_r);
 				}
-				
 				
 				while (Main.multi_r.length > 0)
 				{
@@ -525,7 +515,7 @@ package
 		
 		{
 			
-			if (e.stageX < Main.breite/2)
+			if (e.stageX < Main.breite / 2)
 			{
 				l0.unclicked();
 				root.stage.removeEventListener(TouchEvent.TOUCH_END, werfe_l);
@@ -540,12 +530,7 @@ package
 					
 				}
 				
-				
-				
-			
-			
-					Main.char.checkAufgabenWurf(0, Main.multi_l);
-				
+				Main.char.checkAufgabenWurf(0, Main.multi_l);
 				
 				while (Main.multi_l.length > 0)
 				{

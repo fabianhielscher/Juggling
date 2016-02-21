@@ -61,12 +61,12 @@ package
 				// Auf Hand gucken
 				if (augenPunkt.x > 0)
 				{
-					ax = 0.05 * (Main.char.HandRechts.x - (this.x - Main.breite/2));
+					ax = 0.05 * (Main.char.HandRechts.x - (this.x - Main.breite / 2));
 					ay = 0.08 * (Main.char.HandRechts.y - (this.y - Player.augenY - 100));
 				}
 				else
 				{
-					ax = 0.05 * (Main.char.HandLinks.x - (this.x - Main.breite/2));
+					ax = 0.05 * (Main.char.HandLinks.x - (this.x - Main.breite / 2));
 					ay = 0.08 * (Main.char.HandLinks.y - (this.y - Player.augenY - 100));
 				}
 				
@@ -74,7 +74,7 @@ package
 			else
 			{
 				// Auf Ball gucken
-				ax = 0.05 * ((hoechster_ball().x) - (this.x - Main.breite/2));
+				ax = 0.05 * ((hoechster_ball().x) - (this.x - Main.breite / 2));
 				ay = 0.08 * ((hoechster_ball().y) - (this.y - Player.augenY - 150));
 			}
 			
@@ -86,17 +86,12 @@ package
 			//
 			augenPunkt.x = vx;
 			augenPunkt.y = vy;
-			//augenPunkt.x = 0;
-			//augenPunkt.y = 0;
-			
-			//trace(augenPunkt.y);
-			//trace(augenPunkt.x);
 			
 			// Augen Punkt innerhalb Radius
 			while (Math.sqrt((augenPunkt.x) * (augenPunkt.x) + (augenPunkt.y) * (augenPunkt.y)) >= Player.augenRadius)
 			{
-			augenPunkt.x *= 0.99;
-			augenPunkt.y *= 0.99;
+				augenPunkt.x *= 0.99;
+				augenPunkt.y *= 0.99;
 			}
 			
 			//Augen Punkt innerhalb Auge

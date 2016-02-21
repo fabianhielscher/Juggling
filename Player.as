@@ -9,6 +9,7 @@ package
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.text.TextField;
+	
 	//import com.adobe.nativeExtensions.Vibration;
 	
 	/**
@@ -158,16 +159,15 @@ package
 			addChild(screen);
 		}
 		
-		
 		public function vibriere(zeit:int):void
 		{
 			if (vibrationOn)
 			{
 				//if (Vibration.isSupported) {
-					//trace("VIBE");
-					//var vibe:Vibration;
-					//vibe = new Vibration();
-					//vibe.vibrate(zeit);
+				//trace("VIBE");
+				//var vibe:Vibration;
+				//vibe = new Vibration();
+				//vibe.vibrate(zeit);
 				//}
 			}
 		}
@@ -190,7 +190,8 @@ package
 			else if (n == 4)
 			{
 				charSprite = new SpritePanda();
-			}else if (n == 5)
+			}
+			else if (n == 5)
 			{
 				charSprite = new SpritePanda();
 			}
@@ -221,16 +222,16 @@ package
 		
 		private function loop(e:Event):void
 		{
-			if (realFrameTimeLastFrame == 0) {
-				realFrameTime = 1000/fps; // framezeit in milisekunden 33,333 ms
-			}else {
-				realFrameTime = new Date().getTime()-realFrameTimeLastFrame;
+			if (realFrameTimeLastFrame == 0)
+			{
+				realFrameTime = 1000 / fps; // framezeit in milisekunden 33,333 ms
 			}
-			Main.frameDropMultiplikator = ( 1 + ((realFrameTime - 1000/Main.fps) / (1000 / Main.fps)));
+			else
+			{
+				realFrameTime = new Date().getTime() - realFrameTimeLastFrame;
+			}
+			Main.frameDropMultiplikator = (1 + ((realFrameTime - 1000 / Main.fps) / (1000 / Main.fps)));
 			realFrameTimeLastFrame = new Date().getTime();
-				
-				
-				
 			
 			hand_bewegen();
 			ball_hand_folgen();
@@ -295,7 +296,6 @@ package
 				
 				//trace("WURF L " + wurfAusAufgabe_l);
 				//trace("WURF R " + wurfAusAufgabe_r);
-				
 				
 				if (wurfAusAufgabe_l[0] != 0)
 				{
@@ -397,8 +397,7 @@ package
 			kannAufgabeBeenden = false;
 			trickAktiv = false;
 			trickCounter = 0;
-			
-
+		
 		}
 		
 		public function initAufgabenArray():void
@@ -410,7 +409,6 @@ package
 			aktuellerAufgabenArrayLinks = getKopierterArray(aktuellerAufgabenArrayLinks, 0);
 			aktuellerAufgabenArrayRechts = getKopierterArray(aktuellerAufgabenArrayRechts, Main.aufgabe[Main.aufgabeAktuell].length / 2);
 		
-			
 			//aktuellerAufgabenArrayLinks = Main.aufgabe[Main.aufgabeAktuell].concat();
 			//aktuellerAufgabenArrayRechts = Main.aufgabe[Main.aufgabeAktuell].concat();
 			//trace("init aufgabenarray fertig L " + aktuellerAufgabenArrayLinks);
@@ -457,10 +455,10 @@ package
 				else
 				{
 					var neuerFangAbstand:Number = max_fangAbstand;
-					if (autoCatch) {
+					if (autoCatch)
+					{
 						neuerFangAbstand *= 0.5;
 					}
-					
 					
 					// check ob ball linke hand berührt
 					if (abstand(BallLuftArray[i], HandLinks) < neuerFangAbstand && BallLuftArray[i].rechtsWirdFangen == false && (fangLinks_buttonPress == true || autoCatch == true) && BallLuftArray[i].vy > 0)
@@ -545,38 +543,38 @@ package
 				var zaehler:int = zeitIntervall * ballAnzahl;
 				
 				addEventListener(Event.ENTER_FRAME, function bla()
-					{
-						zaehler--;
-						
-						if ((zaehler % zeitIntervall) == 0)
-						{
-							if (gerade % 2 == 0)
-							{
-								
-								neuer_ball(BallLuftArray, HandRechts.fange_x, HandRechts.y - Player.ballSpawnHight);
-								BallLuftArray[(BallLuftArray.length - 1)].einblenden();
-								BallLuftArray[BallLuftArray.length - 1].rechtsWirdFangen = true;
-								
-							}
-							else
-							{
-								neuer_ball(BallLuftArray, HandLinks.fange_x, HandLinks.y - Player.ballSpawnHight);
-								BallLuftArray[(BallLuftArray.length - 1)].einblenden();
-								BallLuftArray[BallLuftArray.length - 1].rechtsWirdFangen = false;
-								
-							}
-							
-							BallLuftArray[(BallLuftArray.length - 1)].ball_in_hand = false;
-							BallLuftArray[(BallLuftArray.length - 1)].berechneFangzeit();
-							gerade++;
-							
-						}
-						if (zaehler == 0)
-						{
-							removeEventListener(Event.ENTER_FRAME, bla);
-						}
+				{
+					zaehler--;
 					
-					});
+					if ((zaehler % zeitIntervall) == 0)
+					{
+						if (gerade % 2 == 0)
+						{
+							
+							neuer_ball(BallLuftArray, HandRechts.fange_x, HandRechts.y - Player.ballSpawnHight);
+							BallLuftArray[(BallLuftArray.length - 1)].einblenden();
+							BallLuftArray[BallLuftArray.length - 1].rechtsWirdFangen = true;
+							
+						}
+						else
+						{
+							neuer_ball(BallLuftArray, HandLinks.fange_x, HandLinks.y - Player.ballSpawnHight);
+							BallLuftArray[(BallLuftArray.length - 1)].einblenden();
+							BallLuftArray[BallLuftArray.length - 1].rechtsWirdFangen = false;
+							
+						}
+						
+						BallLuftArray[(BallLuftArray.length - 1)].ball_in_hand = false;
+						BallLuftArray[(BallLuftArray.length - 1)].berechneFangzeit();
+						gerade++;
+						
+					}
+					if (zaehler == 0)
+					{
+						removeEventListener(Event.ENTER_FRAME, bla);
+					}
+				
+				});
 			}
 		
 		}
@@ -869,22 +867,18 @@ package
 				showInfo();
 			}
 			
-			
 			// Auge
 			
-		
 			//Main.augeLinks.x = -augenAbstand+Main.breite/2;
-			Main.augeLinks.x = -augenAbstand+Main.breite/2;
-			Main.augeRechts.x = augenAbstand+Main.breite/2; 	
+			Main.augeLinks.x = -augenAbstand + Main.breite / 2;
+			Main.augeRechts.x = augenAbstand + Main.breite / 2;
 			Main.augeLinks.y = augenY;
-			Main.augeRechts.y = augenY; 
-		
+			Main.augeRechts.y = augenY;
 			
 			// Bälle
 			
 			reset_balls();
-			
-			
+		
 		}
 		
 		public function showCharacter():void
@@ -984,7 +978,7 @@ package
 			
 			if (Main.buttons.r1.visible == true)
 			{
-				flugbahn.berechneFlugKoords(handAbstand - handRadius, - handAbstand - handRadius, 1);
+				flugbahn.berechneFlugKoords(handAbstand - handRadius, -handAbstand - handRadius, 1);
 			}
 			if (Main.buttons.r2.visible == true)
 			{
@@ -992,7 +986,7 @@ package
 			}
 			if (Main.buttons.r3.visible == true)
 			{
-				flugbahn.berechneFlugKoords(handAbstand - handRadius, - handAbstand - handRadius, 3);
+				flugbahn.berechneFlugKoords(handAbstand - handRadius, -handAbstand - handRadius, 3);
 			}
 			if (Main.buttons.r4.visible == true)
 			{
@@ -1051,14 +1045,14 @@ package
 		{
 			trace("unshow");
 			trace(radiusShape);
-			if (radiusShape!=null)
+			if (radiusShape != null)
 			{
 				trace("unshow radius");
 				removeChild(radiusShape);
 				radiusShape = null;
 			}
 			
-			if (flugbahn!=null)
+			if (flugbahn != null)
 			{
 				trace("unshow flugbahn");
 				removeChild(flugbahn);
@@ -1401,7 +1395,6 @@ package
 				
 				if (mirror)
 				{
-					//trace("mirror");
 					BallLuftArray[BallLuftArray.length - 1].flipBitmapData();
 				}
 				
@@ -1434,8 +1427,7 @@ package
 		{
 			// check ob der wurf auch der nächste in der aufgabe ist
 			// aufgabenwurf ist der jetztige wurf, entweder [3] oder [3,4]
-			//trace(" ");
-			//trace("check wurf mit hand " + hand + "  mit array " + wurfArray + " im intervall " + intervall);
+			
 			wurfArray = wurfArray.sort();
 			var geschafft:Boolean = false;
 			var aktuellerAufgabenWurf:Array = new Array();
@@ -1449,10 +1441,8 @@ package
 				{
 					
 					// keinen neuen wurf gefunden, aufgabe kopieren und hinten ranhängen
-					trace("keinen neuen wurf gefunden");
 					aktuellerAufgabenArrayLinks = getKopierterArray(aktuellerAufgabenArrayLinks, 0);
 					aktuellerAufgabenArrayRechts = getKopierterArray(aktuellerAufgabenArrayRechts, Main.aufgabe[Main.aufgabeAktuell].length / 2);
-					trace("neuer Array ist " + aktuellerAufgabenArrayLinks);
 					
 				}
 				
@@ -1468,11 +1458,9 @@ package
 				{
 					
 					// keinen neuen wurf gefunden, aufgabe kopieren und hinten ranhängen
-					trace("keinen neuen wurf gefunden");
+					
 					aktuellerAufgabenArrayLinks = getKopierterArray(aktuellerAufgabenArrayLinks, 0);
 					aktuellerAufgabenArrayRechts = getKopierterArray(aktuellerAufgabenArrayRechts, Main.aufgabe[Main.aufgabeAktuell].length / 2);
-					
-					trace("neuer Array ist " + aktuellerAufgabenArrayRechts);
 					
 				}
 				
@@ -1498,8 +1486,6 @@ package
 			
 			if (geschafft)
 			{
-				trace(" ");
-				trace("wurf wird markiert");
 				trickAktiv = true;
 				
 				// wurf geschafft, wird auf 0 gesetzt
@@ -1519,23 +1505,16 @@ package
 					aktuellerAufgabenArrayRechts[getNextWurfPositionImArrayRechts()] = [0];
 				}
 				
-				trace("nach dem löschen array Links: " + aktuellerAufgabenArrayLinks);
-				trace("nach dem löschen array Rechts: " + aktuellerAufgabenArrayRechts);
-				trace(" ");
 			}
 		
 		}
 		
 		public function getKopierterArray(array:Array, startFrame:int):Array
 		{
-			//trace(" ");
-			//trace("startframe ist "+startFrame);
 			var lang:int = array.length
 			for (var i:int = 0; i < Main.aufgabe[Main.aufgabeAktuell].length / 2; i++)
 			{
 				array[lang + i] = Main.aufgabe[Main.aufgabeAktuell][startFrame + i]
-					//trace("kopiere aus intervall " + (i+startFrame));
-					//trace("array " + array);
 				
 			}
 			
@@ -1584,8 +1563,6 @@ package
 			return returner;
 		
 		}
-		
-	
 	
 	}
 

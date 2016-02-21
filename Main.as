@@ -149,9 +149,6 @@
 			buttons.x = 0;
 			buttons.y = 0;
 			
-			//trace(stage.stageWidth+"  "+buttons.width+"  "+stage.width+"  "+stage.fullScreenWidth+ "  "+dpi);
-			//buttons.scaleX = breite / 480;
-			//buttons.scaleY = hoehe / 800;
 		}
 		
 		public function button1rlHandler(e:TouchEvent):void

@@ -29,7 +29,7 @@ package
 		
 		public function setInfo():void
 		{
-			
+		
 		}
 		
 		public function rechts_click():void
@@ -70,12 +70,12 @@ package
 		
 		private function maleAufgaben(e:Event):void
 		{
-			if (zaehler < buffer*Main.aufgabe.length)
+			if (zaehler < buffer * Main.aufgabe.length)
 			{
 				
 				if (zaehler % buffer == 0)
 				{
-					trick = new Aufgabe(-150 + zaehler * 75/buffer, 0, zaehler/buffer, true);
+					trick = new Aufgabe(-150 + zaehler * 75 / buffer, 0, zaehler / buffer, true);
 					addChild(trick);
 					trickArray[zaehler] = trick;
 				}

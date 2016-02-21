@@ -22,9 +22,7 @@ package com.adobe.nativeExtensions
 		private static var extContext:ExtensionContext = null;
 		
 		public function Vibration()
-		{
-			trace ("Vibration Constructor");
-			
+		{			
 			// If the one instance of the ExtensionContext class has not
 			// yet been created, create it now.
 			if (!extContext)
@@ -35,7 +33,6 @@ package com.adobe.nativeExtensions
 		
 		public static function get isSupported():Boolean
 		{
-			trace ("Vibration isSupported()");
 			
 			// Because this is a static function, create the ExtensionContext object, if necessary.
 			if (!extContext)
@@ -49,7 +46,6 @@ package com.adobe.nativeExtensions
 		//Initialize the extension by calling our "initNativeCode" ANE function
 		private static function initExtension():void
 		{
-			trace ("Vibration Constructor: Create an extension context");
 			
 			// The extension context's context type  is NULL, because this extension
 			// has only one context type.
@@ -60,7 +56,6 @@ package com.adobe.nativeExtensions
 		
 		public function vibrate(duration:Number):void
 		{
-			trace ("Vibration vibrate()");
 			
 			// Note that the duration value, in milliseconds, applies to the Android implementation, but not
 			// to the iOS implementation. The iOS implementation ignores the duration value.

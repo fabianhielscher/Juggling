@@ -60,7 +60,6 @@ package
 			radius = r;
 			abstand = h;
 		
-	
 		}
 		
 		public function wechsel():void
@@ -129,17 +128,14 @@ package
 				vy = -vy_max;
 			}
 			
-			vy *= Math.pow(daempfung_y,Main.frameDropMultiplikator);
-			vx *= Math.pow(daempfung_x,Main.frameDropMultiplikator);
-		
-			this.x += vx*Main.frameDropMultiplikator;
-			this.y += vy*Main.frameDropMultiplikator;
+			vy *= Math.pow(daempfung_y, Main.frameDropMultiplikator);
+			vx *= Math.pow(daempfung_x, Main.frameDropMultiplikator);
+			
+			this.x += vx * Main.frameDropMultiplikator;
+			this.y += vy * Main.frameDropMultiplikator;
 			
 			//vy *= Main.frameDropMultiplikator;
 			//vx *= Main.frameDropMultiplikator;
-			
-			
-			
 			
 			// nach außen begrenzen
 			if (Math.abs(this.x) > 1.0 * (Math.abs(abstand + radius)))
@@ -185,12 +181,9 @@ package
 					
 					zeit_bis_fangen = array[i].zeit_bis_fangen;
 					
-					
-					trace("HAND: zeit_bis_fangen "+ zeit_bis_fangen);
-					
 					if (zeit_bis_fangen >= 0 && (zeit_bis_fangen <= (Player.zeitIntervall)) && (zeit_bis_fangen < record_zeit) && Rechts == true && (array[i].rechtsWirdFangen == true && Rechts == true))
 					{
-
+						
 						myFangBall = i;
 						record_zeit = zeit_bis_fangen;
 					}
@@ -210,7 +203,7 @@ package
 	   {
 	   var n:Number = Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
 	   return n;
-	 }*/
+	   }*/
 	
 	}
 }

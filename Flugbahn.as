@@ -30,7 +30,7 @@ package
 			zeitIntervall = z;
 			
 			alleFlugdaten = new Array();
-
+		
 		}
 		
 		public function showFlugKoords():void
@@ -39,8 +39,6 @@ package
 			addChild(punkt);
 			punkt.graphics.beginFill(0xFFFFFF);
 			
-			//punkt.graphics.lineStyle(6, 0xDDDDFF);
-			//trace(alleFlugdaten);
 			this.addEventListener(Event.ENTER_FRAME, show);
 		}
 		
@@ -49,7 +47,7 @@ package
 			// generiere flugdaten
 			
 			var Koords:Array = new Array();
-
+			
 			var pos_y:int = 0;
 			var pos_x:Number = start_x;
 			var strecke_x:Number = end_x - start_x;
@@ -62,7 +60,6 @@ package
 			
 			var vy:Number = zeit * (-1) * Ball.g / 2;
 			var vx:Number = strecke_x / zeit;
-			
 			
 			if (zeit <= 0)
 			{
@@ -92,22 +89,20 @@ package
 			{
 				for (var i:int = 0; i < alleFlugdaten.length; i++)
 				{
-					//trace("show  "+zaehler);
 					
-					//if (alleFlugdaten[i].length > 0)
 					if (alleFlugdaten[i].length > 0)
 					{
-						punkt.graphics.drawCircle(alleFlugdaten[i][0].x, alleFlugdaten[i][0].y, 1+2 * zaehler / (zeitIntervall));
+						punkt.graphics.drawCircle(alleFlugdaten[i][0].x, alleFlugdaten[i][0].y, 1 + 2 * zaehler / (zeitIntervall));
 						alleFlugdaten[i].splice(0, 1);
 					}
 					if (alleFlugdaten[i].length > 0)
 					{
-						punkt.graphics.drawCircle(alleFlugdaten[i][0].x, alleFlugdaten[i][0].y, 1+2 * zaehler / (zeitIntervall));
+						punkt.graphics.drawCircle(alleFlugdaten[i][0].x, alleFlugdaten[i][0].y, 1 + 2 * zaehler / (zeitIntervall));
 						alleFlugdaten[i].splice(0, 1);
 					}
 					if (alleFlugdaten[i].length > 0)
 					{
-						punkt.graphics.drawCircle(alleFlugdaten[i][0].x, alleFlugdaten[i][0].y, 1+2 * zaehler / (zeitIntervall));
+						punkt.graphics.drawCircle(alleFlugdaten[i][0].x, alleFlugdaten[i][0].y, 1 + 2 * zaehler / (zeitIntervall));
 						alleFlugdaten[i].splice(0, 1);
 					}
 				}
