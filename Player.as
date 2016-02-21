@@ -9,7 +9,6 @@ package
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.text.TextField;
-	
 	//import com.adobe.nativeExtensions.Vibration;
 	
 	/**
@@ -164,9 +163,12 @@ package
 		{
 			if (vibrationOn)
 			{
-				//var vibe:Vibrationnn;
-				//vibe = new Vibrationnn();
-				//vibe.vibrate(zeit);
+				//if (Vibration.isSupported) {
+					//trace("VIBE");
+					//var vibe:Vibration;
+					//vibe = new Vibration();
+					//vibe.vibrate(zeit);
+				//}
 			}
 		}
 		

@@ -51,7 +51,6 @@
 		
 		public function Main():void
 		{
-			//var assa:Vibrationnn = new Vibrationnn();
 			
 			//stage.quality = "LOW";
 			
