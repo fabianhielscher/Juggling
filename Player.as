@@ -9,8 +9,7 @@ package
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.text.TextField;
-	
-	//import com.adobe.nativeExtensions.Vibration;
+	import com.adobe.nativeExtensions.Vibration;
 	
 	/**
 	 * ...
@@ -37,7 +36,7 @@ package
 		public static var fangRechts_buttonPress:Boolean = false;
 		public static var fangLinks_buttonPress:Boolean = false;
 		
-		public var vibrationOn = false;
+		public var vibrationOn = true;
 		
 		// Charakter Attribute
 		
@@ -164,9 +163,12 @@ package
 		{
 			if (vibrationOn)
 			{
-				//var vibe:Vibrationnn;
-				//vibe = new Vibrationnn();
-				//vibe.vibrate(zeit);
+				if (Vibration.isSupported) {
+					trace("VIBE");
+					var vibe:Vibration;
+					vibe = new Vibration();
+					vibe.vibrate(zeit);
+				}
 			}
 		}
 		

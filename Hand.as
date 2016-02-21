@@ -128,7 +128,7 @@ package
 			{
 				vy = -vy_max;
 			}
-			trace("Math.pow(daempfung_y,Main.frameDropMultiplikator);" + Math.pow(daempfung_y,Main.frameDropMultiplikator));
+			
 			vy *= Math.pow(daempfung_y,Main.frameDropMultiplikator);
 			vx *= Math.pow(daempfung_x,Main.frameDropMultiplikator);
 		
