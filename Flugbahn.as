@@ -40,7 +40,7 @@ package
 			punkt.graphics.beginFill(0xFFFFFF);
 			
 			//punkt.graphics.lineStyle(6, 0xDDDDFF);
-			trace(alleFlugdaten);
+			//trace(alleFlugdaten);
 			this.addEventListener(Event.ENTER_FRAME, show);
 		}
 		

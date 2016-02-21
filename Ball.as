@@ -94,6 +94,7 @@ package
 		
 		public function berechneFangzeit():void
 		{
+			trace("vy::::::: " + vy);
 			zeit = 0;
 			zeit_end = -2 * vy / g;
 			
@@ -255,31 +256,18 @@ package
 			}
 			else
 			{
-				// time frame conversion
-				// fps = 30
-				// wenn vx = 1 -> 1 pixel pro (1/fps) sekundenn = 30 pixel pro sekunde  oder 0.03 pixel pro milisekunde
-				// neues vx = s/t = 1 pixel
-				var realFrameTime:Number;
-				var realFrameTimeDiff:Number;
-	
-				if (realFrameTimeLastFrame == 0) {
-					realFrameTime = 1000/Main.fps; // framezeit in milisekunden 33,333 ms
-				}else {
-					realFrameTime = new Date().getTime()-realFrameTimeLastFrame;
-				}
 				
-				realFrameTimeDiff = realFrameTime - 1000/Main.fps // ist 0 per perfekte fps, bei framedrops > 0
-				trace("realFrameTime: "+realFrameTime );
-				trace("Abweichung: " + realFrameTimeDiff );
-				Main.frameDropMultiplikator = ( 1 + (realFrameTimeDiff / (1000 / Main.fps)));
-
+				
 				
 				this.y += vy *Main.frameDropMultiplikator;
 				this.x += vx *Main.frameDropMultiplikator;
-				vy += g*( 1 + (realFrameTimeDiff / (1000 / Main.fps)));
+				vy += g*Main.frameDropMultiplikator;
 				
-				realFrameTimeLastFrame = new Date().getTime();
 				zeit += Main.frameDropMultiplikator;
+				
+				trace("  ");
+				trace("zeit_end "+zeit_end );
+				trace("zeit "+zeit );
 				zeit_bis_fangen = zeit_end - zeit;
 				
 			}

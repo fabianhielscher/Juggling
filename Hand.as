@@ -128,25 +128,18 @@ package
 			{
 				vy = -vy_max;
 			}
-			
-			vy *= daempfung_y;
-			vx *= daempfung_x;
-			
+			trace("Math.pow(daempfung_y,Main.frameDropMultiplikator);" + Math.pow(daempfung_y,Main.frameDropMultiplikator));
+			vy *= Math.pow(daempfung_y,Main.frameDropMultiplikator);
+			vx *= Math.pow(daempfung_x,Main.frameDropMultiplikator);
+		
 			this.x += vx*Main.frameDropMultiplikator;
 			this.y += vy*Main.frameDropMultiplikator;
 			
-			//while (Math.sqrt((this.x - abstand) * (this.x - abstand) + (this.y) * (this.y)) >= Math.abs(radius))
-			//{
-				//
-				//this.x -= abstand;
-				//this.x *= 0.99;
-				//this.x += abstand;
-				//this.y *= 0.99;
-				//
-				//vx *= 0.99;
-				//vy *= 0.99;
-				//
-			//}
+			//vy *= Main.frameDropMultiplikator;
+			//vx *= Main.frameDropMultiplikator;
+			
+			
+			
 			
 			// nach außen begrenzen
 			if (Math.abs(this.x) > 1.0 * (Math.abs(abstand + radius)))
@@ -193,10 +186,7 @@ package
 					zeit_bis_fangen = array[i].zeit_bis_fangen;
 					
 					
-	
-					trace("array[i].zeit_end "+ array[i].zeit_end);
-					trace("array[i].zeit "+ array[i].zeit);
-					trace("zeit_bis_fangen "+ zeit_bis_fangen);
+					trace("HAND: zeit_bis_fangen "+ zeit_bis_fangen);
 					
 					if (zeit_bis_fangen >= 0 && (zeit_bis_fangen <= (Player.zeitIntervall)) && (zeit_bis_fangen < record_zeit) && Rechts == true && (array[i].rechtsWirdFangen == true && Rechts == true))
 					{

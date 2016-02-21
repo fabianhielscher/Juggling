@@ -90,8 +90,8 @@
 		public function loadData():void
 		{
 			Player.player = 1;
-			Player.wurfObjekt = 6;
-			Player.ballAnzahl = 1;
+			Player.wurfObjekt = 1;
+			Player.ballAnzahl = 5;
 			
 			initAufgaben();
 			aufgabeAktuell = 0;

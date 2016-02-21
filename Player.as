@@ -60,6 +60,9 @@ package
 		public var max_handGeschwindigkeit_x:Number;
 		public var max_handGeschwindigkeit_y:Number;
 		
+		public var realFrameTimeLastFrame:Number = 0;
+		public var realFrameTime:Number = 0;
+		
 		public static var augenRadius:Number;
 		public static var augenBegrenzung:Number;
 		
@@ -216,6 +219,17 @@ package
 		
 		private function loop(e:Event):void
 		{
+			if (realFrameTimeLastFrame == 0) {
+				realFrameTime = 1000/fps; // framezeit in milisekunden 33,333 ms
+			}else {
+				realFrameTime = new Date().getTime()-realFrameTimeLastFrame;
+			}
+			Main.frameDropMultiplikator = ( 1 + ((realFrameTime - 1000/Main.fps) / (1000 / Main.fps)));
+			realFrameTimeLastFrame = new Date().getTime();
+				
+				
+				
+			
 			hand_bewegen();
 			ball_hand_folgen();
 			check_baelle();
@@ -720,10 +734,10 @@ package
 				// kann mit 6 Bällen
 				
 				max_fangAbstand = 75; // abstand hand ball ob gefangen wird
-				zeitIntervall = 16;
-				handBeschleunigung_x = 1;
-				handBeschleunigung_y = 1;
-				handDaempfung_x = 0.9;
+				zeitIntervall = 20;
+				handBeschleunigung_x = 1.5;
+				handBeschleunigung_y = 1.5;
+				handDaempfung_x = 0.8;
 				handDaempfung_y = 0.8
 				handRadius = MAX_handradius * 0.8;
 				handAbstand = MAX_handabstand * 0.8;
@@ -733,10 +747,10 @@ package
 				augenAbstand = 35;
 				augenY = 658;
 				augenBegrenzung = -6.5;
-				fangGeschwindigkeit = 6; // wei schnell hand beim fangen ausschlägt in y-richtung
+				fangGeschwindigkeit = 3; // wei schnell hand beim fangen ausschlägt in y-richtung
 				wurfGeschwindigkeit = 6; // wei schnell hand beim werfen ausschlägt in y-richtung
-				Ball.g = 1.6;
-				
+				Ball.g = 1.3;
+				ballAnzahl = 2;
 				
 				//Buttons
 				Main.buttons.initButtons(false, false, true, true, false, false);
@@ -758,10 +772,11 @@ package
 				max_handGeschwindigkeit_y = 30;
 				augenRadius = 15;
 				augenAbstand = 15;
-				augenY = 370;
+				augenY = 658;
 				augenBegrenzung = -30;
 				fangGeschwindigkeit = 15;
 				Ball.g = 0.8;
+				ballAnzahl = 3;
 				
 				Main.buttons.initButtons(true, true, true, true, false, false);
 			}
@@ -780,8 +795,8 @@ package
 				max_handGeschwindigkeit_y = 40;
 				augenRadius = 22;
 				//augenAbstand = 45;
-				augenAbstand = 55;
-				augenY = 385;
+				augenAbstand = 45;
+				augenY = 675;
 				augenBegrenzung = -60;
 				fangGeschwindigkeit = 15;
 				Ball.g = 0.7;
@@ -1094,7 +1109,6 @@ package
 				if (wurfzahl % 2 == 1)
 				{
 					ungeaderWurf = true;
-					
 				}
 				
 				if (hand == 0)

@@ -118,10 +118,8 @@ package
 		
 		public function init(wurfzahl:int):void
 		{
-			trace("init " + wurfzahl)
 			buttonZahl = wurfzahl;
 			gotoAndStop(buttonZahl + 1);
-			trace("botton ist bei y: "+this.y)
 		}
 		
 		public function deleate():void
